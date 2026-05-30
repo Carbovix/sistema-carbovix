@@ -1,10 +1,19 @@
 import src.menus as ui
-import csv
 import os
+import csv
 
+def adiciona_dado():
+    os.system("cls")
 
-def adiciiona_dado():
-    return
+    nome_maquina = input("Digite o nome da máquina: ")
+    qnt_emissao = input("Digite a quantidade emitida pela máquina: ")
+
+    linha = f"{nome_maquina}, {qnt_emissao}"
+
+    with open("data/dados.csv", "a", newline="") as arquivo:
+        arquivo.write(linha)
+
+    print("\nDado adionado com sucesso!")
 
 def deletar_dados():
     numero_dado = input("Digite o registro do dado que deseja deletar: ")
