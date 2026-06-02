@@ -1,3 +1,4 @@
+
 import src.funcoes as fn
 import src.menus as ui
 
@@ -11,6 +12,9 @@ while True:
 
         if pergunta == "n":
             break
+    
+    elif escolha == "2":
+        fn.ler_dados()
     
     elif escolha == "4":
         fn.deletar_dados()
