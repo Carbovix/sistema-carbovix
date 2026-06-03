@@ -12,5 +12,8 @@ while True:
         if pergunta == "n":
             break
     
+    elif escolha == "3":
+        fn.atualiza_dados()
+
     elif escolha == "4":
         fn.deletar_dados()
