@@ -15,6 +15,7 @@ def adiciona_dado():
 
     print("\nDado adionado com sucesso!")
 
+
 def deletar_dados():
     numero_dado = input("Digite o registro do dado que deseja deletar: ")
 
