@@ -56,6 +56,8 @@ def atualiza_dados():
                 arquivo.write(linha)       
 
 def deletar_dados():
+    os.system("cls")
+
     numero_dado = input("Digite o registro do dado que deseja deletar: ")
 
     arquivo_path = "data/dados.csv"
@@ -70,6 +72,11 @@ def deletar_dados():
             linhas_mantidas.append(linha)
 
     if encontrado:
+        confirmacao = input(f"Tem certeza que deseja deletar? (Digite: S para sim, N para não)").strip().upper()
+        if confirmacao == "N":
+            print("Operação de exclusão cancelada.")
+            return
+
         with open(arquivo_path, "w", newline="") as arquivo:
             escritor_csv = csv.writer(arquivo)
             escritor_csv.writerows(linhas_mantidas)
