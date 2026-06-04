@@ -15,6 +15,19 @@ def adiciona_dado():
 
     print("\nDado adionado com sucesso!")
 
+def ler_dados():
+   nome_maquina = input("Digite qual maquina você deseja verificar: ")
+
+
+   with open("data/dados.csv", "r") as arquivo:
+       linhas = arquivo.readlines()
+      
+      
+       for linha in linhas:
+           dado = linha.split(", ")
+          
+           if dado[0] == nome_maquina:
+               print(linha)
 
 def deletar_dados():
     numero_dado = input("Digite o registro do dado que deseja deletar: ")
