@@ -69,7 +69,8 @@ def ler_dados():
                 print(linha)
 
 def deletar_dados():
-    numero_dado = input("Digite o registro do dado que deseja deletar: ")
+    os.system("cls")
+    nome_maquina = input("Digite o nome da máquina que deseja deletar: ")
 
     arquivo_path = "data/dados.csv"
     linhas_mantidas = []
@@ -77,7 +78,7 @@ def deletar_dados():
     with open(arquivo_path, "r", newline="") as arquivo:
         leitor_csv = csv.reader(arquivo)
         for linha in leitor_csv:
-            if linha and linha[0] == numero_dado:
+            if linha and linha[0] == nome_maquina:
                 encontrado = True
                 continue
             linhas_mantidas.append(linha)
@@ -91,10 +92,10 @@ def deletar_dados():
         with open(arquivo_path, "w", newline="") as arquivo:
             escritor_csv = csv.writer(arquivo)
             escritor_csv.writerows(linhas_mantidas)
-        print(f"Dado da máquina '{numero_dado}' foi deletado com sucesso.")
+        print(f"Dado da máquina '{nome_maquina}' foi deletado com sucesso.")
         input("Pressione Enter para continuar...")
     else:
-        print(f"O dado da máquina '{numero_dado}' não foi encontrado.")
+        print(f"O dado da máquina '{nome_maquina}' não foi encontrado.")
         input("Pressione Enter para continuar...")
         
 
