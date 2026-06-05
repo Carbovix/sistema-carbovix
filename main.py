@@ -5,4 +5,12 @@ while True:
     escolha = input(ui.MENU_PRINCIPAL)
 
     if escolha == "1":
-        fn.adiciiona_dado(escolha)
+        fn.adiciona_dado()
+
+        pergunta = input("\n\nDeseja a fazer mais alguma ação (s/n)? ").lower().strip()
+
+        if pergunta == "n":
+            break
+    
+    elif escolha == "4":
+        fn.deletar_dados()
