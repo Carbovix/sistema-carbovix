@@ -93,9 +93,9 @@ def deletar_dados():
             escritor_csv = csv.writer(arquivo)
             escritor_csv.writerows(linhas_mantidas)
         print(f"Dado da máquina '{nome_maquina}' foi deletado com sucesso.")
-        input("Pressione Enter para continuar...")
+        input("Pressione a tecla 'Enter' para continuar...")
     else:
         print(f"O dado da máquina '{nome_maquina}' não foi encontrado.")
-        input("Pressione Enter para continuar...")
+        input("Pressione a tecla 'Enter' para continuar...")
         
 
