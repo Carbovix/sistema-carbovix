@@ -8,17 +8,17 @@ def adiciona_dado():
     nome_maquina = input("Digite o nome da máquina: ")
     qnt_emissao = input("Digite a quantidade emitida pela máquina: ")
 
-    linha = f"{nome_maquina}, {qnt_emissao}"
+    linha = f"{nome_maquina}, {qnt_emissao}\n"
 
     with open("data/dados.csv", "a", newline="") as arquivo:
         arquivo.write(linha)
 
-    print("\nDado adionado com sucesso!")
+    print("\nDado adicionado com sucesso!")
 
 def atualiza_dados():
     nome_maquina = input("Digite o nome da máquina que deseja atualizar: ")
 
-    with open("data\dados.csv", "r") as arquivo:
+    with open("data/dados.csv", "r") as arquivo:
         linhas = arquivo.readlines()
 
         todas_linhas = []
@@ -48,7 +48,7 @@ def atualiza_dados():
             quantidade_atualizada = input("Digite a quantidade atualizada: ")
             linha_atualizada = f"{dado[0]}, {quantidade_atualizada}"
 
-    with open("data\dados.csv", "w") as arquivo:
+    with open("data/dados.csv", "w") as arquivo:
         for i, linha in enumerate(todas_linhas):
             if i == index_linha:
                 arquivo.write(linha_atualizada)
@@ -68,7 +68,8 @@ def ler_dados():
                 print(linha)
 
 def deletar_dados():
-    numero_dado = input("Digite o registro do dado que deseja deletar: ")
+    os.system("cls")
+    numero_dado = input("Digite o nome da máquina que deseja deletar: ")
 
     arquivo_path = "data/dados.csv"
     linhas_mantidas = []
@@ -85,8 +86,10 @@ def deletar_dados():
         with open(arquivo_path, "w", newline="") as arquivo:
             escritor_csv = csv.writer(arquivo)
             escritor_csv.writerows(linhas_mantidas)
-            print(f"Dado com registro '{numero_dado}' foi deletado com sucesso.")
+        print(f"Dado da máquina '{numero_dado}' foi deletado com sucesso.")
+        input("Pressione Enter para continuar...")
     else:
-        print(f"O dado com registro '{numero_dado}' não foi encontrado.")
+        print(f"O dado da máquina '{numero_dado}' não foi encontrado.")
+        input("Pressione Enter para continuar...")
         
 
