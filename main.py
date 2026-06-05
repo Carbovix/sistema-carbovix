@@ -21,3 +21,6 @@ while True:
     
     elif escolha == "4":
         fn.deletar_dados()
+        
+    else:
+        print("Opção inválida. Tente novamente.")
