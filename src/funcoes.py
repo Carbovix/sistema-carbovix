@@ -13,7 +13,20 @@ def adiciona_dado():
     with open("data/dados.csv", "a", newline="") as arquivo:
         arquivo.write(linha)
 
-    print("\nDado adionado com sucesso!")
+    print("\nDado adicionado com sucesso!")
+
+def coletar_dados():
+    consumo_kwh = float(input("Digite o consumo mensal em kWh: "))
+    capital = float(input("Digite a quantidade de capital disponível (R$): "))
+    prazo = float(input("Digite o prazo de retorno (anos): "))
+    meta_reducao = float(input("Digite a meta de redução (em kg): "))
+
+    carbono_indireto = consumo_kwh * 0.1
+
+    with open("data/dados.txt", "a", encoding="utf-8") as arquivo:
+        arquivo.write(f"""Consumo de energia (kWh/mês): {consumo_kwh} \nCapital disponível (R$): {capital} \nPrazo de retorno (anos): {prazo} \nMeta de redução (kg): {meta_reducao} \nEmissão de carbono indireta (kg CO2): {carbono_indireto}""")
+
+    print("\nDados salvos com sucesso!")        
 
 def deletar_dados():
     numero_dado = input("Digite o registro do dado que deseja deletar: ")
@@ -36,5 +49,3 @@ def deletar_dados():
             print(f"Dado com registro '{numero_dado}' foi deletado com sucesso.")
     else:
         print(f"O dado com registro '{numero_dado}' não foi encontrado.")
-        
-
