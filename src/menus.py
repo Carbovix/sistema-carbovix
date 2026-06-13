@@ -1,13 +1,9 @@
 MENU_PRINCIPAL = """
-[1] Adicionar dado
-[2] Consultar dado
+[1] Cadastrar dados da empresa
+[2] Consultar dados
 [3] Atualizar dado
 [4] Deletar dado
+[5] Coletar leitura do Arduino
+[6] Análise IA
 
 Digite a opção desejada: """
-
-MENU_ALTERACAO_DADO = """
-[1] Nome da máquina
-[2] Quantidade emitida
-
-Digite qual dado você deseja alterar: """
